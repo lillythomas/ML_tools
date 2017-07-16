@@ -1,5 +1,4 @@
 import numpy as np
-#import mahotas
 from shapely.geometry import shape
 import pandas as pd
 import geopandas as gpd
