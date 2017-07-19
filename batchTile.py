@@ -61,22 +61,6 @@ def tileGrey(f):
     tile256(f,x,y,out)
     return
 
-"""p = multiprocessing.Pool()
-for f in glob.glob(images+'*.tif'):
-    p.apply_async(translateRGB, [f])
-    os.system('ls '+images)
-p.close()
-p.join()
-
-p = multiprocessing.Pool()
-for f in glob.glob(images+'*.png'):
-    p.apply_async(tileRGB, [f])
-    print('tiled image')
-p.close()
-p.join()"""
-
-p = multiprocessing.Pool(30)
-
 if which=='images':
   p = multiprocessing.Pool(30)
   for f in glob.glob(images+'*.tif'):
@@ -105,21 +89,3 @@ elif which=='annotations':
   print('tiled annotations')
 else:
    print("wrong options, please choose either images or annotations")
-
-"""
-if which=='images':
-  for f in glob.glob(images+'*.tif'):
-      p.apply_async(tileRGB, [f])
-  print('tiled images')
-elif which=='annotations':
-  for f in glob.glob(annotations+'*.tif'):
-      p.apply_async(tileGrey, [f])
-  print('tiled annotations')
-else:
-   print("wrong options, please choose either images or annotations")
-p.close()
-p.join()
-"""
-#for f in *; do mv "$f" "${f//_060717_d1g99b97575_062917cr_c_/}"; done
-
-#nohup python FCN.py --gpu 0 --data_dir /mnt/cirrus/data/impervious/HCpilot2/tree_shadow_train/tiled/ --mode=train > HCpilot2_tree_shadow_train.out&
