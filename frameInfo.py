@@ -26,18 +26,6 @@ on = args.outName
 os.system('mkdir '+od+'tmp/')
 
 
-def TMS(rootdir):
-    list=[]
-    for subdir, dirs, files in os.walk(rootdir):
-        filename_split = os.path.splitext(subdir)
-        filename_zero, fileext = filename_split
-        basename = os.path.basename(filename_zero)
-        for file in files:
-            listt= os.path.join(subdir, file)
-            list.append(listt)
-    return list
-
-
 def labelInfo(lbl):
     filename_split = os.path.splitext(lbl)
     filename_zero, fileext = filename_split
